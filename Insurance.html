@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<header>
+<title>Insuarance</title>
+</header>
+<style>
+*{
+	box-sizing : border-box;
+}
+body{
+	background-color : black;
+	color : white;
+}
+button{
+	padding : 10px;
+	font-size : 24px;
+	background-color : dodgerblue;
+	color : white;
+	cursor : pointer;
+}
+button:hover{
+	opacity : 0.7;
+}
+.column{
+	display : inline-block;
+	float : center;
+	width : 33.33%;
+	padding : 5px;
+}
+.row:after{
+	content : "";
+	clear : both;
+	display : table;
+}
+</style>
+<body>
+<div align="center">
+<h1>Insurance Button</h1>
+<div class="row">
+<div class="column">
+<img alt="toyota" src="toyota.jpg"style="width:100%"></img>
+</div>
+<div class="column">
+<img alt="honda" src="honda.jpg"style="width:100%"></img>
+</div>
+</div>
+<button type="button" id="button">Press To Start</button>
+
+
+</div>
+
+</body>
+<script>
+var button = document.getElementById("button");
+button.onclick = function(){
+	while (true){
+		let car = prompt('What is the car model? Toyota or Honda.');
+		if(car !== "honda" && car !== "toyota"){
+			alert('Not a valid type. Try Again.');
+			continue;
+		}
+		if(car === "honda"){
+			let drive = prompt("Is the Honda 'all wheel' drive? Yes or no?");
+			if(drive !== "yes"){
+				console.log("A Honda That Is Two Wheel Drive Costs $350.");
+				alert("Check results in console.");
+				let answer = prompt('Would you like to add another car?');
+				if (answer === "yes"){
+					continue;
+				} else{
+					break;
+				}
+			}
+			else{
+				console.log("A Honda That Is All Wheel Drive Cost $450.");
+				alert("Check results in console.");
+				let answer = prompt('Would you like to add another car?');
+				if (answer === "yes"){
+					continue;
+				} else{
+					break;
+				}
+			}
+		}
+		else if(car === "toyota"){
+			let drive = prompt("Is The Toyota 'all wheel' drive? Yes or no?");
+			if(drive !== "yes"){
+				console.log("A Toyota That Is Not All Wheel Drive Costs $250.");
+				alert("Check results in console.");
+				let answer = prompt("Would you like to add another car?");
+				if(answer === "yes"){
+					continue;
+				}
+				else{
+					break;
+				}
+			}
+			else{
+				console.log("A Toyota That Is All Wheel Drive Costs $300.");
+				alert("Check results in console.");
+				let answer = prompt("Would you like to add another car?");
+				if (answer === "yes"){
+					continue;
+				}
+				else{
+					break;
+				}
+			}
+		}
+	}
+}
+
+</script>
+</html>
